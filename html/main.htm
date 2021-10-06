@@ -9,16 +9,27 @@
 
 <body>
     <!-- タイトル -->
-    <h1>ToDo管理 メイン画面</h1>
+    <header>
+        <h1>ToDo管理 メイン画面</h1>
+    </header>    
 
     <!-- ボタン類 flameA -->
-    <button type="button">add</button>
-    <button type="button">delete</button>
-    <input type="search" placeholder="ToDoのキーワードを入力">
+    <div class="menu">
+        <a href="add.htm">
+            <button type="button">add</button>
+        </a>
+        <form>
+            <input type="search" placeholder="ToDoのキーワードを入力">
+            <button class="search-button">
+                <img src="../image/search_icon.png" width="10px" height="10px">
+            </button>
+        </form>
+    </div>
 
     <!-- ToDo一覧表示 flameB -->
-    <ul id="list">
-    </ul>
+    <div class="todo">
+        <ul id="todolist"></ul>
+    </div>
 
 </body>
 
