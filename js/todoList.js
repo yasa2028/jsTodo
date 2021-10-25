@@ -1,12 +1,38 @@
 /**
- * タスク一覧のリストを作成します。
+ * ページ読み込み時
  */
 window.onload = function () {
+    // 検索ボタンにイベント追加
+    const searchButton = document.getElementById('searchButton');
+    searchButton.setAttribute('click', 'searchTodo()');
+
+    // 登録済みToDoの初期表示
     var todo = ["Task1", "Task2", "Task3", "Task4", "Task5"];
     todo.forEach(task => {
         var li = document.createElement('li');
             li.textContent = task;
-            document.getElementById('todolist').appendChild(li);
+            document.getElementById('todoList').appendChild(li);
+    })
+}
+
+/**
+ * 検索ボタンクリック時の絞り込みを行います。
+ * 部分一致で検索します。
+ */
+function searchTodo(keyword) {
+    // 引数チェック
+    if (!keyword) {
+        return;
+    }
+
+    // 絞り込み
+    // list を読み込む
+    const todoList = document.getElementById('todoList');
+    // if で 指定のキーワードを含んでいるtodoのみで再度配列を作成する
+    todoList.forEach(task => {
+        if (task.indexOf(keyword, 0) > 0) {
+            // li への追加、初期化も必要？
+        }
     })
 }
 
